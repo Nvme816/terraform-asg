@@ -1,8 +1,6 @@
 # terraform-asg-deployment
 Static website deployed to S3 using Terraform ASG
 
-Static Website CI/CD with Terraform + S3 + DynamoDB
-
 ## Objective
 Deploy a resilient web hosting baseline that stays available during traffic surges using an Auto Scaling Group with minimum capacity enforcement and automated instance recovery.
 
