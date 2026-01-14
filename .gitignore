@@ -1,0 +1,20 @@
+# Terraform local state/cache
+**/.terraform/
+
+# Terraform state files (do NOT push)
+**/*.tfstate
+**/*.tfstate.*
+
+# Crash logs
+crash.log
+
+# Sensitive variable files
+*.tfvars
+*.tfvars.json
+
+# CLI override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
