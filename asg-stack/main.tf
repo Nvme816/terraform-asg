@@ -17,7 +17,7 @@ data "aws_subnet" "subnet_details" {
   id       = each.value
 }
 
-# Choose up to 2 PUBLIC subnets (map_public_ip_on_launch = true), prefer different AZs
+# 2 PUBLIC subnets + different AZs
 locals {
   public_subnets = [
     for s in data.aws_subnet.subnet_details :
