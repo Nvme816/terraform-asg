@@ -16,9 +16,9 @@ Deploy a resilient web hosting baseline that stays available during traffic surg
 - Amazon DynamoDB (Terraform State Locking)
 
 ## Architecture
-GitHub Repo → Terraform → Launch Template → Auto Scaling Group (2 Subnets in Default VPC) → EC2 Instances (Apache via User Data)  
-Terraform Remote Backend → S3 Bucket  
-Terraform State Locking → DynamoDB Table
+GitHub Repo + Terraform + Launch Template + Auto Scaling Group (2 Subnets in Default VPC) + EC2 Instances (Apache via User Data)  
+Terraform Remote Backend + S3 Bucket  
+Terraform State Locking + DynamoDB Table
 
 ## Steps Completed
 1. Created Terraform project structure with separate folders for backend bootstrapping and ASG deployment.
