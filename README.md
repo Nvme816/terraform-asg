@@ -1,8 +1,9 @@
 # terraform-asg-deployment
-Static website deployed to S3 using Terraform ASG
+Resilient EC2 web tier with Auto Scaling deployed using Terraform.
 
 ## Objective
-Deploy a resilient web hosting baseline that stays available during traffic surges using an Auto Scaling Group with minimum capacity enforcement and automated instance recovery.
+Deploy a resilient, self-healing web application tier on AWS using Terraform.
+This project uses an Auto Scaling Group with a launch template to manage EC2 instances running Apache, ensuring high availability and automated instance replacement.
 
 ## Services Used
 - GitHub (Source Repository)
@@ -35,6 +36,13 @@ Terraform State Locking + DynamoDB Table
 9. Created an S3 bucket and configured it as the Terraform remote backend.
 10. Enabled DynamoDB state locking to prevent concurrent Terraform state modification.
 11. Migrated local Terraform state to the remote backend using `terraform init -migrate-state`.
+
+## Architecture Diagram
+Client --> Internet --> EC2 in Auto Scaling Group (Apache)
+                    |
+                Remote Backend
+                └── S3 Terraform State
+                └── DynamoDB State Lock
 
 ## Deployment Details
 - AWS Region: us-east-1
