@@ -37,15 +37,6 @@ Terraform State Locking + DynamoDB Table
 10. Enabled DynamoDB state locking to prevent concurrent Terraform state modification.
 11. Migrated local Terraform state to the remote backend using `terraform init -migrate-state`.
 
-## Architecture Diagram
-
-```
-Client → Internet → EC2 (Apache) in Auto Scaling Group
-                         │
-                         ├── S3 (Terraform State)
-                         └── DynamoDB (State Lock)
-```
-
 ## Deployment Details
 - AWS Region: us-east-1
 - Auto Scaling Group Name: cc-asg-foundational-asg
