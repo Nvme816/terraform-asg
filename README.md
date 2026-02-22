@@ -38,11 +38,13 @@ Terraform State Locking + DynamoDB Table
 11. Migrated local Terraform state to the remote backend using `terraform init -migrate-state`.
 
 ## Architecture Diagram
-Client --> Internet --> EC2 in Auto Scaling Group (Apache)
-                    |
-                Remote Backend
-                └── S3 Terraform State
-                └── DynamoDB State Lock
+
+```
+Client → Internet → EC2 (Apache) in Auto Scaling Group
+                         │
+                         ├── S3 (Terraform State)
+                         └── DynamoDB (State Lock)
+```
 
 ## Deployment Details
 - AWS Region: us-east-1
